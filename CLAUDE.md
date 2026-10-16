@@ -479,10 +479,10 @@ typo away from wiping the client's content.
 
 **Deployment.** Vercel project `luna-piena` under the `ovio-plus` team, beside
 `ovioplus-platform` and `website`, connected to this GitHub repo so pushes to
-`main` deploy. Live at **https://lunapiena.vercel.app**. The hyphenated form was unavailable
-when the project was first named, which is why the domain has no hyphen; the
-habit stuck through the rename. The domain is bound to the project, so it
-follows future production deploys.
+`main` deploy. Live at **https://lunapiena-demo.vercel.app**. Both `lunapiena.vercel.app` and
+`luna-piena.vercel.app` are taken by accounts outside this one, hence the
+`-demo` suffix, which is honest about what the site is anyway. The domain is
+bound to the Vercel project, so it follows future production deploys.
 
 **Still open:**
 

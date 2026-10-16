@@ -64,4 +64,4 @@ export function readServerEnv(): { ok: true; env: ServerEnv } | { ok: false; err
   return { ok: true, env: parsed.data }
 }
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lunapiena.vercel.app'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lunapiena-demo.vercel.app'
