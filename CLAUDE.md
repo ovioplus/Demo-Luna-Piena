@@ -1,15 +1,30 @@
-# La Promessa, read this first, every session
+# Luna Piena, read this first, every session
 
-This is the website for **La Promessa**, a one-star restaurant in Florence, and
-the first client build on what is meant to become a reusable template for other
-restaurants. Treat this file and the Session Log at the bottom as the thing that
-survives a deleted chat session, and keep it that way.
+**This is OvioPlus's own demo restaurant site, and the template for client
+builds.** It is not a live restaurant and Luna Piena does not exist.
+
+It was originally built for a real one-star client in Florence, who reviewed it
+and went with another provider. Rather than delete the work, it was renamed to
+an invented restaurant and kept as the thing you show the next prospect, and as
+the starting point you fork for a real one. Everything in it is deliberately
+plausible and deliberately fictional.
+
+Treat this file and the Session Log at the bottom as the thing that survives a
+deleted chat session, and keep it that way.
 
 ## What this is, and what it is not
 
 A **completely standalone project**. Its own repo, its own Vercel project, its
-own database (phase 2), its own content. It is not part of the OvioPlus
-platform and it is not part of the OvioPlus marketing site.
+own database, its own content. It is not part of the OvioPlus platform and it
+is not part of the OvioPlus marketing site.
+
+**The restaurant name is not hardcoded anywhere.** It lives in
+`src/content/restaurant.ts` and every component reads it from there, including
+the site header, the dashboard chrome and the page metadata. Forking this for a
+real client should be a content edit, not a find-and-replace. The one exception
+is the `LP` monogram struck into the 3D seal and its SVG fallback, which is
+drawn in `src/components/seal/`, so a client whose initials are not L and P
+needs those two files changed as well.
 
 It shares exactly one thing with OvioPlus: an outbound booking link, defined in
 `src/lib/booking.ts` and nowhere else. Nothing else in this codebase knows
@@ -157,8 +172,8 @@ A local Postgres for development, since Docker Hub is blocked on this network
 but ECR Public mirrors the official images:
 
 ```
-docker run -d --name lapromessa-pg -e POSTGRES_PASSWORD=dev -e POSTGRES_USER=dev \
-  -e POSTGRES_DB=lapromessa -p 55432:5432 \
+docker run -d --name lunapiena-pg -e POSTGRES_PASSWORD=dev -e POSTGRES_USER=dev \
+  -e POSTGRES_DB=lunapiena -p 55432:5432 \
   public.ecr.aws/docker/library/postgres:17-alpine
 ```
 
@@ -171,7 +186,7 @@ site serves the seed content and the dashboard reports itself unconfigured.
 
 - `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`: the contact form
   and the dashboard's sign-in links. `CONTACT_FROM_EMAIL` is an
-  **ovioplus.com** address, because lapromessa.it is not verified in Resend yet;
+  **ovioplus.com** address, because the restaurant's own domain is not verified in Resend yet;
   the visitor goes in reply-to. One variable to change once it is.
 
   **Mail is .com, the web is .ai.** OvioPlus serves ovioplus.ai and
@@ -187,6 +202,46 @@ site serves the seed content and the dashboard reports itself unconfigured.
 ## Session Log
 
 <!-- Newest entry first. One entry per session that changed non-trivial state or made a decision worth remembering. Keep entries short: a few lines, not a restatement of every commit. -->
+
+### 2026-10-16, the client left, so it became the demo
+
+The Florence client reviewed the site and went with another provider. Kept and
+renamed rather than deleted: this is now **Luna Piena**, OvioPlus's own demo
+restaurant and the template to fork for real clients. The brief was initials
+L and P so the brass seal's `LP` monogram survives untouched, which it does.
+
+**Hosting costs nothing extra.** Checked rather than assumed: the Vercel team is
+on **Pro**, already paid for the platform and the marketing site, and usage is
+pooled, so a third low-traffic project adds nothing. The Neon org is on the
+**free** plan and the compute auto-suspends when idle. Resend's free tier is far
+above a demo's volume. The `.vercel.app` domain is free.
+
+**The name is no longer hardcoded.** Five components had the string literally in
+them: the root metadata, the site header, the dashboard chrome, the sign-in page
+and the site layout. They all read `getRestaurant().name` now. That is the right
+shape for a template and it is why this rename touched content and not markup.
+The remaining exception is the `LP` monogram in `src/components/seal/`, noted at
+the top of this file.
+
+**Two things that a rename here has to remember:**
+
+- **The tasting menu name lives in Postgres, not in the seed file.** Editing
+  `src/content/menu.ts` changes what a fresh database starts as, and changes
+  nothing on a deployed site that already has one. Production needed
+  `pnpm db:seed --force` against Neon before the old name disappeared from the
+  live menu. Any future content rename has the same two-step shape.
+- **The copy was built on the old name.** The home statement was a pun on "a
+  promise is kept twice a day" and the section label was "La promessa". A
+  find-and-replace would have left a dead joke. Both rewritten: the label is now
+  "Il principio" / "The principle" and the statement drops the conceit while
+  keeping the voice.
+
+Also renamed: the booking slug in `src/lib/booking.ts` (the single OvioPlus
+integration point), the package name, the Vercel domain, the Neon project and
+the GitHub repo.
+
+**Still open:** the repo is public. Less of a problem now that no client is
+named in it, but worth a decision rather than a default.
 
 ### 2026-09-20 (evening), mail: the domain was right, the TLD was not
 
@@ -214,7 +269,7 @@ and `.env.example`. **`src/lib/booking.ts` and the footer credit link stay
 
 Production now:
 
-- `CONTACT_FROM_EMAIL` = `La Promessa <no-reply@ovioplus.com>`
+- `CONTACT_FROM_EMAIL` = `Luna Piena <no-reply@ovioplus.com>`
 - `CONTACT_TO_EMAIL` = `ayoub.balti@ovioplus.com`
 - `OWNER_EMAILS` = `ayoub.balti@ovioplus.com,ayoub.balti@pixartprinting.com`
 
@@ -223,7 +278,7 @@ env, so it is not relying on its `reservations@ovioplus.ai` default and is
 presumably fine. Not verified directly, the value is hidden.
 
 **Still open:** `CONTACT_TO_EMAIL` should become the restaurant's real address
-at handover, and `CONTACT_FROM_EMAIL` should move to lapromessa.it once the
+at handover, and `CONTACT_FROM_EMAIL` should move to the restaurant's own domain once the
 client buys and verifies it. One variable each.
 
 ### 2026-09-20 (later still), Neon connected, and a sender-address trap
@@ -233,7 +288,7 @@ now reads the menu and the hours from Postgres.
 
 While setting the Resend variables, found a bug I had written in phase 1:
 `CONTACT_FROM_EMAIL` was validated with `z.string().email()`, which **rejects**
-`La Promessa <no-reply@ovioplus.ai>`. That is the form Resend wants and the form
+`Luna Piena <no-reply@ovioplus.ai>`. That is the form Resend wants and the form
 `.env.example` tells you to use. It went unnoticed because zod does not validate
 `.default()` values, so the fallback worked and the failure only appeared the
 moment somebody set the variable explicitly, which the deploy instructions say
@@ -409,7 +464,7 @@ with the menu, hours and gallery seeded in `src/content`.
   the seal face delivered the monogram rotated a quarter turn. The face is now
   its own `circleGeometry`, which maps the unit square straight onto it.
 
-**Database.** Neon project **`la-promessa`** (`muddy-cell-76186430`),
+**Database.** Neon project **`luna-piena`** (`muddy-cell-76186430`),
 aws-eu-central-1, Postgres 18, in the `ovioplus` Neon org
 (`org-twilight-frost-09251036`) but a completely separate project from
 `ovioplus` (`late-lake-47546531`). Database name is Neon's default `neondb`;
@@ -422,12 +477,11 @@ Local development points at a Docker container instead, deliberately: keeping
 `DIRECT_URL` in `.env.local` aimed at Neon would put `pnpm db:seed --force` one
 typo away from wiping the client's content.
 
-**Deployment.** Vercel project `la-promessa` under the `ovio-plus` team, beside
+**Deployment.** Vercel project `luna-piena` under the `ovio-plus` team, beside
 `ovioplus-platform` and `website`, connected to this GitHub repo so pushes to
-`main` deploy. Live at **https://lapromessa.vercel.app**. Note the URL:
-`la-promessa.vercel.app` is already taken by someone outside this account, and
-Vercel's own generated name was `la-promessa-jade.vercel.app`, so the hyphen was
-dropped to get something presentable. The domain is bound to the project, so it
+`main` deploy. Live at **https://lunapiena.vercel.app**. The hyphenated form was unavailable
+when the project was first named, which is why the domain has no hyphen; the
+habit stuck through the rename. The domain is bound to the project, so it
 follows future production deploys.
 
 **Still open:**

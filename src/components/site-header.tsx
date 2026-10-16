@@ -22,7 +22,7 @@ const NAV: readonly { href: AppPathname; key: 'menu' | 'story' | 'gallery' | 're
  * paper once you scroll past it. Every route starts with a `notte` block for
  * exactly this reason: the header only ever has two states to reason about.
  */
-export function SiteHeader() {
+export function SiteHeader({ name }: { name: string }) {
   const t = useTranslations('nav')
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -74,7 +74,7 @@ export function SiteHeader() {
             href="/"
             className="t-caption relative z-10 tracking-[0.34em] transition-opacity duration-300 hover:opacity-65"
           >
-            La Promessa
+            {name}
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">

@@ -72,7 +72,7 @@ export async function POST(request: Request) {
      * Sent from an ovioplus.com address because the restaurant's own domain is
      * not verified in Resend yet. Note .com: OvioPlus serves the web from .ai
      * but sends mail from .com, which is the verified domain. The visitor goes in replyTo, so hitting
-     * reply in the inbox still reaches the right person. Once lapromessa.it is
+     * reply in the inbox still reaches the right person. Once the restaurant's own domain is
      * verified, change CONTACT_FROM_EMAIL and nothing else.
      */
     from: env.env.CONTACT_FROM_EMAIL,

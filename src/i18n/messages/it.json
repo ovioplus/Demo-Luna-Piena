@@ -20,7 +20,7 @@
   "home": {
     "heroEyebrow": "Firenze · Una stella Michelin",
     "heroScroll": "Continua",
-    "statementLabel": "La promessa",
+    "statementLabel": "Il principio",
     "dishesLabel": "Dalla cucina",
     "chefLabel": "Chi cucina",
     "chefCta": "Leggi la storia",
@@ -151,28 +151,28 @@
   },
   "meta": {
     "home": {
-      "title": "La Promessa · Ristorante stellato a Firenze",
+      "title": "Luna Piena · Ristorante stellato a Firenze",
       "description": "Cucina italiana contemporanea a Firenze. Ventidue coperti, una stella Michelin, un menu che cambia con il mercato."
     },
     "menu": {
       "title": "Menu",
-      "description": "I menu degustazione e la carta de La Promessa, con l'indicazione degli allergeni."
+      "description": "I menu degustazione e la carta di Luna Piena, con l'indicazione degli allergeni."
     },
     "story": {
       "title": "La storia",
-      "description": "Matteo Ferrante e la cucina de La Promessa: ventidue coperti, sette persone, nessuna gerarchia teatrale."
+      "description": "Matteo Ferrante e la cucina di Luna Piena: ventidue coperti, sette persone, nessuna gerarchia teatrale."
     },
     "gallery": {
       "title": "Galleria",
-      "description": "Il servizio, la sala e la materia prima de La Promessa."
+      "description": "Il servizio, la sala e la materia prima di Luna Piena."
     },
     "reservations": {
       "title": "Prenota",
-      "description": "Orari, chiusure e condizioni di prenotazione de La Promessa a Firenze."
+      "description": "Orari, chiusure e condizioni di prenotazione di Luna Piena a Firenze."
     },
     "contact": {
       "title": "Contatti",
-      "description": "Indirizzo, orari e modulo di contatto de La Promessa a Firenze."
+      "description": "Indirizzo, orari e modulo di contatto di Luna Piena a Firenze."
     }
   },
   "dashboard": {

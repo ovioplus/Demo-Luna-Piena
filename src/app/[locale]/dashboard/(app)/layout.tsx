@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { signOut } from '@/auth'
 import { getOwnerSession } from '@/auth/guard'
+import { getRestaurant } from '@/content'
 import { DashboardNav } from '@/features/dashboard/components/dashboard-nav'
 import { Link, redirect } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
@@ -37,7 +38,7 @@ export default async function DashboardLayout({
     return null
   }
 
-  const t = await getTranslations('dashboard')
+  const [t, restaurant] = await Promise.all([getTranslations('dashboard'), getRestaurant()])
 
   async function endSession() {
     'use server'
@@ -50,7 +51,7 @@ export default async function DashboardLayout({
         <div className="px-gutter flex flex-wrap items-center justify-between gap-x-10 gap-y-4 py-4">
           <div className="flex items-center gap-8">
             <Link href="/dashboard" className="t-caption tracking-[0.28em]">
-              La Promessa
+              {restaurant.name}
             </Link>
             <span aria-hidden className="hidden h-4 w-px bg-inchiostro/15 sm:block" />
             <DashboardNav />

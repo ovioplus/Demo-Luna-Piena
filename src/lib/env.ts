@@ -41,9 +41,9 @@ const serverSchema = z.object({
    *
    * The restaurant's own domain is not verified yet, so mail goes out from
    * OvioPlus and the visitor's address goes in reply-to. Swap this one variable
-   * once lapromessa.it is verified in Resend.
+   * once the restaurant's own domain is verified in Resend.
    */
-  CONTACT_FROM_EMAIL: address('CONTACT_FROM_EMAIL').default('La Promessa <no-reply@ovioplus.com>'),
+  CONTACT_FROM_EMAIL: address('CONTACT_FROM_EMAIL').default('Luna Piena <no-reply@ovioplus.com>'),
   /** Where the restaurant actually reads its mail. */
   CONTACT_TO_EMAIL: address('CONTACT_TO_EMAIL'),
 })
@@ -64,4 +64,4 @@ export function readServerEnv(): { ok: true; env: ServerEnv } | { ok: false; err
   return { ok: true, env: parsed.data }
 }
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lapromessa.vercel.app'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lunapiena.vercel.app'

@@ -25,7 +25,7 @@ export default async function SiteLayout({
 
   return (
     <>
-      <SiteHeader />
+      <SiteHeader name={restaurant.name} />
       <main id="main">{children}</main>
       <SiteFooter restaurant={restaurant} hours={hours} />
     </>

@@ -12,8 +12,8 @@ import type { Menu } from './types'
 export const menu: Menu = {
   tastingMenus: [
     {
-      id: 'la-promessa',
-      name: { it: 'La Promessa', en: 'La Promessa' },
+      id: 'luna-piena',
+      name: { it: 'Luna Piena', en: 'Luna Piena' },
       description: {
         it: 'Il percorso completo. Nove portate che raccontano dove siamo adesso, riscritte quando il mercato lo impone.',
         en: 'The full path. Nine courses describing where we are right now, rewritten whenever the market insists.',

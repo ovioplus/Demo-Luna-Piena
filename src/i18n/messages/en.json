@@ -20,7 +20,7 @@
   "home": {
     "heroEyebrow": "Florence · One Michelin star",
     "heroScroll": "Continue",
-    "statementLabel": "The promise",
+    "statementLabel": "The principle",
     "dishesLabel": "From the kitchen",
     "chefLabel": "Who cooks",
     "chefCta": "Read the story",
@@ -151,28 +151,28 @@
   },
   "meta": {
     "home": {
-      "title": "La Promessa · Michelin-starred restaurant in Florence",
+      "title": "Luna Piena · Michelin-starred restaurant in Florence",
       "description": "Contemporary Italian cooking in Florence. Twenty-two covers, one Michelin star, a menu that follows the market."
     },
     "menu": {
       "title": "Menu",
-      "description": "The tasting menus and a la carte at La Promessa, with allergens declared."
+      "description": "The tasting menus and a la carte at Luna Piena, with allergens declared."
     },
     "story": {
       "title": "Story",
-      "description": "Matteo Ferrante and the kitchen at La Promessa: twenty-two covers, seven people, no theatrical hierarchy."
+      "description": "Matteo Ferrante and the kitchen at Luna Piena: twenty-two covers, seven people, no theatrical hierarchy."
     },
     "gallery": {
       "title": "Gallery",
-      "description": "Service, the room and the raw material at La Promessa."
+      "description": "Service, the room and the raw material at Luna Piena."
     },
     "reservations": {
       "title": "Reservations",
-      "description": "Hours, closures and booking conditions at La Promessa in Florence."
+      "description": "Hours, closures and booking conditions at Luna Piena in Florence."
     },
     "contact": {
       "title": "Contact",
-      "description": "Address, hours and contact form for La Promessa in Florence."
+      "description": "Address, hours and contact form for Luna Piena in Florence."
     }
   },
   "dashboard": {

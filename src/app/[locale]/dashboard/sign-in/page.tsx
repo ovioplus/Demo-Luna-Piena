@@ -3,6 +3,7 @@ import { AuthError } from 'next-auth'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { signIn } from '@/auth'
 import { isOwner } from '@/auth/owners'
+import { getRestaurant } from '@/content'
 import { hasDatabase } from '@/db/client'
 import { Card } from '@/features/dashboard/components/fields'
 import { Link, redirect } from '@/i18n/navigation'
@@ -22,8 +23,11 @@ export default async function SignInPage({
   const query = await searchParams
   setRequestLocale(locale)
 
-  const t = await getTranslations('dashboard.signIn')
-  const nav = await getTranslations('dashboard')
+  const [t, nav, restaurant] = await Promise.all([
+    getTranslations('dashboard.signIn'),
+    getTranslations('dashboard'),
+    getRestaurant(),
+  ])
 
   async function requestLink(formData: FormData) {
     'use server'
@@ -55,7 +59,7 @@ export default async function SignInPage({
     <div className="flex min-h-svh flex-col justify-center bg-gesso">
       <div className="px-gutter mx-auto w-full max-w-md py-16">
         <Link href="/" className="t-caption tracking-[0.28em] text-cenere">
-          La Promessa
+          {restaurant.name}
         </Link>
 
         <h1 className="t-display-l mt-10">{t('title')}</h1>

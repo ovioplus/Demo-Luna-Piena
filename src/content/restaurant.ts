@@ -16,8 +16,8 @@ import type { Restaurant } from './types'
  * ============================================================================
  */
 export const restaurant: Restaurant = {
-  name: 'La Promessa',
-  legalName: 'La Promessa S.r.l.',
+  name: 'Luna Piena',
+  legalName: 'Luna Piena S.r.l.',
 
   tagline: {
     it: 'Cucina italiana contemporanea',
@@ -25,8 +25,8 @@ export const restaurant: Restaurant = {
   },
 
   statement: {
-    it: 'Una promessa si mantiene due volte al giorno, per pochi coperti, con quello che il mercato ha deciso quella mattina. Non serve altro.',
-    en: 'A promise is kept twice a day, for a handful of covers, with whatever the market decided that morning. Nothing else is required.',
+    it: 'Si cucina due volte al giorno, per pochi coperti, con quello che il mercato ha deciso quella mattina. Non serve altro.',
+    en: 'We cook twice a day, for a handful of covers, with whatever the market decided that morning. Nothing else is required.',
   },
 
   chef: {
@@ -41,8 +41,8 @@ export const restaurant: Restaurant = {
         en: 'Matteo Ferrante grew up in his family trattoria, where at eleven he was handed the least glamorous and most instructive job in the kitchen: cleaning the fish. He still says everything he knows came from those afternoons.',
       },
       {
-        it: 'Dopo dodici anni tra Parigi, Copenaghen e San Sebastián è tornato in Italia con una sola idea fissa: una sala piccola, un menu corto, nessun compromesso sulla materia prima. La Promessa ha aperto nel 2019 con ventidue coperti e li ha ancora tutti.',
-        en: 'After twelve years between Paris, Copenhagen and San Sebastián he came back to Italy with one fixed idea: a small room, a short menu, no compromise on the raw material. La Promessa opened in 2019 with twenty-two covers and still has exactly that many.',
+        it: 'Dopo dodici anni tra Parigi, Copenaghen e San Sebastián è tornato in Italia con una sola idea fissa: una sala piccola, un menu corto, nessun compromesso sulla materia prima. Luna Piena ha aperto nel 2019 con ventidue coperti e li ha ancora tutti.',
+        en: 'After twelve years between Paris, Copenhagen and San Sebastián he came back to Italy with one fixed idea: a small room, a short menu, no compromise on the raw material. Luna Piena opened in 2019 with twenty-two covers and still has exactly that many.',
       },
       {
         it: 'La stella è arrivata nel 2022. In cucina non è cambiato niente, se non il numero di persone che chiamano.',
@@ -66,10 +66,10 @@ export const restaurant: Restaurant = {
   },
 
   phone: '+39 055 018 4420', // PLACEHOLDER
-  email: 'info@lapromessa.it', // PLACEHOLDER
+  email: 'info@lunapiena.it', // PLACEHOLDER
   michelinStars: 1,
 
   social: {
-    instagram: 'lapromessa.firenze', // PLACEHOLDER
+    instagram: 'lunapiena.firenze', // PLACEHOLDER
   },
 }

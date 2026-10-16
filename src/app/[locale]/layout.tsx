@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Bodoni_Moda, Instrument_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { getRestaurant } from '@/content'
 import { routing, type Locale } from '@/i18n/routing'
 import { SITE_URL } from '@/lib/env'
 import '../globals.css'
@@ -37,13 +38,16 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'meta.home' })
+  const [t, restaurant] = await Promise.all([
+    getTranslations({ locale, namespace: 'meta.home' }),
+    getRestaurant(),
+  ])
 
   return {
     metadataBase: new URL(SITE_URL),
     title: {
       default: t('title'),
-      template: '%s · La Promessa',
+      template: `%s · ${restaurant.name}`,
     },
     description: t('description'),
     alternates: {
@@ -52,7 +56,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: 'website',
-      siteName: 'La Promessa',
+      siteName: restaurant.name,
       locale: locale === 'it' ? 'it_IT' : 'en_GB',
       title: t('title'),
       description: t('description'),
