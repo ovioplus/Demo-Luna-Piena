@@ -14,7 +14,7 @@
  *   node scripts/warm-images.mjs
  *   node scripts/warm-images.mjs https://some-preview.vercel.app
  */
-const base = (process.argv[2] ?? 'https://lunapiena-demo.vercel.app').replace(/\/$/, '')
+const base = (process.argv[2] ?? 'https://parmarotta-demo.vercel.app').replace(/\/$/, '')
 
 const ROUTES = [
   '/',

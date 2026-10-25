@@ -1,48 +1,43 @@
 import type { Menu } from './types'
 
 /**
- * PLACEHOLDER MENU. Plausible one-star Italian cooking, invented for the demo.
- * In phase 2 this whole object is replaced by rows from Postgres and edited
- * from the dashboard; the shape stays identical, so nothing downstream changes.
+ * ILLUSTRATIVE MENU for the Parma Rotta pitch.
  *
- * Allergens are legally required (EU 1169/2011) and are therefore part of the
- * Dish type rather than a free-text note. Keep them accurate when you swap in
- * the real dishes.
+ * The dishes are the ones Parma Rotta is publicly reported to serve: the
+ * anolini in brodo, the tortelli di erbette, the lasagna, the cuts off the
+ * wood grill, Jessica's chocolate, the culatello from Spigaroli. The
+ * descriptions, the prices and the two set menus are **invented and plausible,
+ * not theirs.** Nobody published their price list and inventing one is the
+ * fastest way to look careless in a pitch, so say so when you present it, and
+ * replace it with their real card the moment they hand it over.
+ *
+ * Allergens are a legal declaration (EU 1169/2011) and these are a best guess
+ * from the dish names. They must be confirmed by the kitchen before this is
+ * ever anything other than a demo.
  */
 export const menu: Menu = {
   tastingMenus: [
     {
-      id: 'luna-piena',
-      name: { it: 'Luna Piena', en: 'Luna Piena' },
+      id: 'tradizione',
+      name: { it: 'Tradizione', en: 'Tradition' },
       description: {
-        it: 'Il percorso completo. Nove portate che raccontano dove siamo adesso, riscritte quando il mercato lo impone.',
-        en: 'The full path. Nine courses describing where we are right now, rewritten whenever the market insists.',
+        it: 'La parte di Parma che si fa con la sfoglia: anolini, tortelli, lasagna, e un dolce dalla vetrina.',
+        en: 'The part of Parma that is made with rolled pasta: anolini, tortelli, lasagna, and one sweet from the window.',
       },
-      courses: 9,
-      price: 185,
-      pairingPrice: 95,
+      courses: 4,
+      price: 55,
+      pairingPrice: 30,
     },
     {
-      id: 'radici',
-      name: { it: 'Radici', en: 'Roots' },
+      id: 'la-brace',
+      name: { it: 'La Brace', en: 'The Fire' },
       description: {
-        it: 'Sei portate costruite solo su prodotti entro cento chilometri da questa cucina.',
-        en: 'Six courses built only on produce from within a hundred kilometres of this kitchen.',
+        it: 'Un percorso sulla griglia a legna, dai tagli di maiale al bue, con contorni di stagione.',
+        en: 'A path across the wood grill, from the pork cuts to the beef, with whatever the season gives.',
       },
-      courses: 6,
-      price: 140,
-      pairingPrice: 70,
-    },
-    {
-      id: 'orto',
-      name: { it: 'Orto', en: 'Garden' },
-      description: {
-        it: 'Interamente vegetale. Non una versione ridotta degli altri menu, ma un menu a sé.',
-        en: 'Entirely plant based. Not a reduced version of the others, but a menu of its own.',
-      },
-      courses: 6,
-      price: 125,
-      pairingPrice: 70,
+      courses: 4,
+      price: 75,
+      pairingPrice: 40,
     },
   ],
 
@@ -52,136 +47,176 @@ export const menu: Menu = {
       title: { it: 'Antipasti', en: 'To begin' },
       dishes: [
         {
-          id: 'battuta-fassona',
+          id: 'culatello',
           name: {
-            it: 'Battuta di Fassona, ostrica, nocciola',
-            en: 'Fassona beef tartare, oyster, hazelnut',
+            it: 'Culatello di Zibello, torta fritta calda',
+            en: 'Culatello di Zibello, hot torta fritta',
           },
           description: {
-            it: 'Coltello, non tritacarne. L’ostrica sta sotto, la nocciola tostata sopra.',
-            en: 'Knife cut, never minced. The oyster sits underneath, the toasted hazelnut on top.',
+            it: 'La torta fritta esce dalla friggitrice e va in tavola. Non aspetta.',
+            en: 'The torta fritta comes out of the fryer and goes straight to the table. It does not wait.',
           },
-          price: 34,
-          allergens: ['molluscs', 'nuts'],
+          price: 22,
+          allergens: ['gluten'],
           signature: true,
         },
         {
-          id: 'capesante',
+          id: 'parmigiano',
           name: {
-            it: 'Capasanta, topinambur, limone caviale',
-            en: 'Scallop, Jerusalem artichoke, finger lime',
+            it: 'Parmigiano Reggiano 36 mesi, mostarda',
+            en: 'Parmigiano Reggiano, 36 months, mostarda',
           },
           description: {
-            it: 'Scottata da un lato solo, cruda dall’altro.',
-            en: 'Seared on one side only, raw on the other.',
+            it: 'A scaglie, a temperatura di cantina.',
+            en: 'In shards, at cellar temperature.',
           },
-          price: 32,
-          allergens: ['molluscs'],
+          price: 16,
+          allergens: ['milk', 'sulphites'],
         },
         {
-          id: 'uovo-63',
+          id: 'vitello-tonnato',
           name: {
-            it: 'Uovo a 63 gradi, parmigiano 36 mesi, tartufo nero',
-            en: 'Egg at 63 degrees, 36-month Parmigiano, black truffle',
+            it: 'Vitello tonnato, capperi',
+            en: 'Vitello tonnato, capers',
           },
           description: {
-            it: 'Tre ingredienti, nessun posto dove nascondersi.',
-            en: 'Three ingredients and nowhere to hide.',
+            it: 'La salsa è montata al momento.',
+            en: 'The sauce is whipped to order.',
           },
-          price: 30,
-          allergens: ['eggs', 'milk'],
+          price: 18,
+          allergens: ['fish', 'eggs'],
         },
       ],
     },
     {
       id: 'primi',
-      title: { it: 'Primi', en: 'Pasta and rice' },
+      title: { it: 'Primi', en: 'Pasta' },
       dishes: [
         {
-          id: 'tortelli-coda',
+          id: 'anolini',
           name: {
-            it: 'Tortelli di coda alla vaccinara, sedano, pecorino',
-            en: 'Oxtail tortelli, celery, pecorino',
+            it: 'Anolini in brodo di manzo e gallina',
+            en: 'Anolini in beef and hen broth',
           },
           description: {
-            it: 'La coda cuoce sei ore. La pasta si tira al momento.',
-            en: 'The oxtail cooks for six hours. The pasta is rolled to order.',
+            it: 'Lo stracotto dentro, il brodo chiaro intorno. Il piatto di Parma.',
+            en: 'The braise inside, the clear broth around it. The dish of Parma.',
           },
-          price: 36,
+          price: 18,
           allergens: ['gluten', 'eggs', 'milk', 'celery'],
           signature: true,
         },
         {
-          id: 'risotto-pomodoro',
+          id: 'tortelli',
           name: {
-            it: 'Risotto all’acqua di pomodoro, basilico bruciato',
-            en: 'Risotto in tomato water, burnt basil',
+            it: 'Tortelli di erbette e ricotta vaccina',
+            en: 'Tortelli of erbette and cow’s ricotta',
           },
           description: {
-            it: 'Bianco nel piatto, rosso al palato.',
-            en: 'White on the plate, red on the palate.',
+            it: 'Burro e parmigiano, niente altro.',
+            en: 'Butter and parmigiano, nothing else.',
           },
-          price: 34,
-          allergens: ['milk', 'sulphites'],
+          price: 16,
+          allergens: ['gluten', 'eggs', 'milk'],
+          signature: true,
         },
         {
-          id: 'spaghetto-alghe',
+          id: 'lasagna',
           name: {
-            it: 'Spaghetto al burro di alghe, ricci di mare',
-            en: 'Spaghetti, seaweed butter, sea urchin',
+            it: 'Lasagna al ragù di bue',
+            en: 'Lasagna with beef ragù',
           },
           description: {
-            it: 'Disponibile solo quando i ricci sono quelli giusti.',
-            en: 'Served only when the urchins are the right ones.',
+            it: 'Sfoglia sottile, ragù lungo, crosta sui bordi.',
+            en: 'Thin sheets, a long ragù, crisp at the edges.',
           },
-          price: 38,
-          allergens: ['gluten', 'milk', 'fish'],
+          price: 17,
+          allergens: ['gluten', 'eggs', 'milk', 'celery'],
+        },
+        {
+          id: 'pappardelle',
+          name: {
+            it: 'Pappardelle ai porcini',
+            en: 'Pappardelle with porcini',
+          },
+          description: {
+            it: 'Solo quando ci sono. Da settembre, finché durano.',
+            en: 'Only when there are any. From September, while they last.',
+          },
+          price: 20,
+          allergens: ['gluten', 'eggs'],
         },
       ],
     },
     {
-      id: 'secondi',
-      title: { it: 'Secondi', en: 'Main courses' },
+      id: 'brace',
+      title: { it: 'La brace', en: 'From the fire' },
       dishes: [
         {
-          id: 'piccione',
+          id: 'costata',
           name: {
-            it: 'Piccione, ciliegia, foglie di fico',
-            en: 'Pigeon, cherry, fig leaf',
+            it: 'Costata di bue, sale rosa dell’Himalaya',
+            en: 'Beef rib, Himalayan pink salt',
           },
           description: {
-            it: 'Petto rosa, coscia glassata, il resto in salsa.',
-            en: 'Breast kept pink, leg glazed, everything else in the sauce.',
+            it: 'Castagno, carpino e faggio. Girata una volta sola.',
+            en: 'Chestnut, hornbeam and beech. Turned once and once only.',
           },
-          price: 46,
-          allergens: ['sulphites'],
+          price: 42,
+          allergens: [],
           signature: true,
         },
         {
-          id: 'rombo',
+          id: 'tomahawk',
           name: {
-            it: 'Rombo, burro nocciola, capperi di Pantelleria',
-            en: 'Turbot, brown butter, Pantelleria capers',
+            it: 'Tomahawk di maiale tigrinto',
+            en: 'Tigrinto pork tomahawk',
           },
           description: {
-            it: 'Cotto sulla lisca, servito intero per due.',
-            en: 'Cooked on the bone, served whole for two.',
+            it: 'Una razza che tiene il grasso dove serve.',
+            en: 'A breed that keeps its fat where it is useful.',
           },
-          price: 44,
-          allergens: ['fish', 'milk'],
+          price: 34,
+          allergens: [],
         },
         {
-          id: 'agnello',
+          id: 'secreto',
           name: {
-            it: 'Agnello, melanzana affumicata, menta',
-            en: 'Lamb, smoked aubergine, mint',
+            it: 'Secreto di Patanegra',
+            en: 'Patanegra secreto',
           },
           description: {
-            it: 'Allevato a venti minuti da qui.',
-            en: 'Raised twenty minutes from here.',
+            it: 'Il taglio che il macellaio teneva per sé.',
+            en: 'The cut the butcher used to keep for himself.',
           },
-          price: 42,
-          allergens: ['milk'],
+          price: 32,
+          allergens: [],
+        },
+        {
+          id: 'costine-agnello',
+          name: {
+            it: 'Costine di agnello',
+            en: 'Lamb ribs',
+          },
+          description: {
+            it: 'Rosmarino e niente fretta.',
+            en: 'Rosemary and no hurry.',
+          },
+          price: 30,
+          allergens: [],
+        },
+        {
+          id: 'fiorentina',
+          name: {
+            it: 'Fiorentina',
+            en: 'Fiorentina',
+          },
+          description: {
+            it: 'Al peso, per due. Chiedete al maître cosa c’è oggi.',
+            en: 'By weight, for two. Ask the maître what came in today.',
+          },
+          price: null,
+          allergens: [],
         },
       ],
     },
@@ -190,43 +225,44 @@ export const menu: Menu = {
       title: { it: 'Dolci', en: 'To finish' },
       dishes: [
         {
-          id: 'zabaione',
+          id: 'cioccolato',
           name: {
-            it: 'Zabaione, caffè, cacao',
-            en: 'Zabaione, coffee, cocoa',
+            it: 'Cioccolato della casa',
+            en: 'Our own chocolate',
           },
           description: {
-            it: 'Montato in sala, come si faceva.',
-            en: 'Whipped at the table, the way it used to be done.',
+            it: 'Dalla vetrina della pasticceria, che si vede entrando.',
+            en: 'From the pastry window you walk past on the way in.',
           },
-          price: 18,
-          allergens: ['eggs', 'milk', 'sulphites'],
-        },
-        {
-          id: 'pesca-verbena',
-          name: {
-            it: 'Pesca, verbena, mandorla',
-            en: 'Peach, verbena, almond',
-          },
-          description: {
-            it: 'Da luglio a settembre, poi sparisce.',
-            en: 'July to September, then it disappears.',
-          },
-          price: 16,
-          allergens: ['nuts', 'milk'],
-        },
-        {
-          id: 'cioccolato-modica',
-          name: {
-            it: 'Cioccolato di Modica, olio nuovo, sale',
-            en: 'Modica chocolate, new-harvest oil, salt',
-          },
-          description: {
-            it: 'Tre cose che non hanno bisogno di una quarta.',
-            en: 'Three things that do not need a fourth.',
-          },
-          price: 16,
+          price: 10,
           allergens: ['milk', 'soy'],
+          signature: true,
+        },
+        {
+          id: 'gelato-latte',
+          name: {
+            it: 'Gelato di latte',
+            en: 'Milk gelato',
+          },
+          description: {
+            it: 'Il latte arriva da una stalla qui vicino.',
+            en: 'The milk comes from a dairy down the road.',
+          },
+          price: 8,
+          allergens: ['milk'],
+        },
+        {
+          id: 'zuppa-inglese',
+          name: {
+            it: 'Zuppa inglese',
+            en: 'Zuppa inglese',
+          },
+          description: {
+            it: 'Come si faceva, con l’alchermes.',
+            en: 'The way it used to be made, with alchermes.',
+          },
+          price: 9,
+          allergens: ['gluten', 'eggs', 'milk', 'sulphites'],
         },
       ],
     },
@@ -234,16 +270,16 @@ export const menu: Menu = {
 
   notes: [
     {
-      it: 'Il menu cambia con il mercato. Alcuni piatti restano per una settimana, altri per una sera.',
-      en: 'The menu follows the market. Some dishes stay for a week, some for one evening.',
+      it: 'I tagli alla brace cambiano con quello che arriva. Il maître vi dice cosa c’è stasera.',
+      en: 'The cuts on the fire change with what comes in. The maître will tell you what there is tonight.',
     },
     {
-      it: 'Informateci di allergie o intolleranze al momento della prenotazione: possiamo riscrivere quasi tutto, se lo sappiamo per tempo.',
-      en: 'Tell us about allergies or intolerances when you book. We can rewrite almost anything, given notice.',
+      it: 'Segnalate allergie e intolleranze al momento della prenotazione, non all’arrivo.',
+      en: 'Tell us about allergies and intolerances when you book, not when you arrive.',
     },
     {
-      it: 'I menu degustazione sono serviti per l’intero tavolo.',
-      en: 'Tasting menus are served for the whole table.',
+      it: 'La cantina conta oltre mille etichette. Chiedete ad Alfonso.',
+      en: 'The cellar holds over a thousand labels. Ask Alfonso.',
     },
   ],
 }

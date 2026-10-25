@@ -36,13 +36,13 @@ export function createSealBumpTexture(): THREE.CanvasTexture {
   // Monogram, raised.
   ctx.fillStyle = '#f0f0f0'
   ctx.font = `400 400px "Bodoni Moda", Didot, "Bodoni MT", Georgia, serif`
-  ctx.fillText('LP', c, c - 24)
+  ctx.fillText('PR', c, c - 24)
 
   // Town name, raised but shallower, so it catches the light later than the mark.
   ctx.fillStyle = '#c8c8c8'
   ctx.font = `500 52px "Instrument Sans", system-ui, sans-serif`
   ctx.letterSpacing = '26px'
-  ctx.fillText('FIRENZE', c + 13, c + 246)
+  ctx.fillText('PARMA', c + 13, c + 246)
   ctx.letterSpacing = '0px'
 
   // A small lozenge above the monogram, the kind of mark a die would carry.

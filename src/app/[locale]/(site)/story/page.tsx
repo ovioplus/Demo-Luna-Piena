@@ -65,7 +65,7 @@ export default async function StoryPage({ params }: { params: Promise<{ locale: 
             </Reveal>
             <Reveal variant="fade" delay={140}>
               <blockquote className="t-display-l text-balance italic">
-                &ldquo;{localized(restaurant.chef.quote, locale)}&rdquo;
+                {localized(restaurant.chef.quote, locale)}
               </blockquote>
             </Reveal>
           </div>

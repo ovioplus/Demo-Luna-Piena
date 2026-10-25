@@ -1,13 +1,30 @@
-# Luna Piena, read this first, every session
+# Parma Rotta pitch demo, read this first, every session
 
-**This is OvioPlus's own demo restaurant site, and the template for client
-builds.** It is not a live restaurant and Luna Piena does not exist.
+**This is a pitch mock-up for Parma Rotta, a real restaurant in Parma. It is
+not their site, it is not affiliated with them, and they have not seen it.**
 
-It was originally built for a real one-star client in Florence, who reviewed it
-and went with another provider. Rather than delete the work, it was renamed to
-an invented restaurant and kept as the thing you show the next prospect, and as
-the starting point you fork for a real one. Everything in it is deliberately
-plausible and deliberately fictional.
+That is a different situation from the two before it (a real client who
+commissioned it, then an invented restaurant), and it comes with rules that are
+not stylistic preferences. They are at the top of this file because getting them
+wrong puts false statements about a real business on a public URL.
+
+1. **The site is `noindex, nofollow` and must stay that way.** Set in
+   `src/app/[locale]/layout.tsx`. Indexed, a mock-up on a vercel.app domain can
+   surface in a search for the real restaurant and be taken for it.
+2. **No Michelin star is claimed.** Parma Rotta holds a Michelin *Plate*, a
+   guide listing. `michelinStars` is 0 and the copy says "Piatto Michelin".
+3. **No founding year is claimed.** Public sources disagree (1968 and 1984).
+   The copy refers to the chef's forty years, which is consistently reported.
+4. **`chef.quote` is the house voice, not Antonio Di Vita's words.** The
+   quotation marks were removed from both components that render it. Do not put
+   invented words in a real person's mouth.
+5. **The prices and the two set menus are invented.** The dishes are ones they
+   are publicly reported to serve; the price list is not theirs. Say so when
+   presenting.
+6. **The photographs are not theirs.** See `src/content/images.ts`.
+
+Their own site blocks automated access, so nothing here came from it. The facts
+came from parmawelcome.it, parma.info, lamadia.com and the Michelin listing.
 
 Treat this file and the Session Log at the bottom as the thing that survives a
 deleted chat session, and keep it that way.
@@ -18,13 +35,20 @@ A **completely standalone project**. Its own repo, its own Vercel project, its
 own database, its own content. It is not part of the OvioPlus platform and it
 is not part of the OvioPlus marketing site.
 
+**This repo gets re-skinned per prospect.** It has been La Promessa (a real
+client), Parma Rotta (invented), and now Parma Rotta. A re-skin is: the content
+files, the message copy that names the place, the seal monogram, the booking
+slug, the photography, the Vercel domain, and a `pnpm db:seed --force` against
+the deployed database. The git history is the record of how each one went.
+
 **The restaurant name is not hardcoded anywhere.** It lives in
 `src/content/restaurant.ts` and every component reads it from there, including
 the site header, the dashboard chrome and the page metadata. Forking this for a
 real client should be a content edit, not a find-and-replace. The one exception
-is the `LP` monogram struck into the 3D seal and its SVG fallback, which is
-drawn in `src/components/seal/`, so a client whose initials are not L and P
-needs those two files changed as well.
+is the monogram struck into the 3D seal and its SVG fallback, currently `PR`
+over `PARMA`, drawn in `src/components/seal/seal-texture.ts` and
+`seal-still.tsx`. Both files need editing on every re-skin. They are the only
+place a name is drawn rather than read.
 
 It shares exactly one thing with OvioPlus: an outbound booking link, defined in
 `src/lib/booking.ts` and nowhere else. Nothing else in this codebase knows
@@ -172,8 +196,8 @@ A local Postgres for development, since Docker Hub is blocked on this network
 but ECR Public mirrors the official images:
 
 ```
-docker run -d --name lunapiena-pg -e POSTGRES_PASSWORD=dev -e POSTGRES_USER=dev \
-  -e POSTGRES_DB=lunapiena -p 55432:5432 \
+docker run -d --name parmarotta-pg -e POSTGRES_PASSWORD=dev -e POSTGRES_USER=dev \
+  -e POSTGRES_DB=parmarotta -p 55432:5432 \
   public.ecr.aws/docker/library/postgres:17-alpine
 ```
 
@@ -203,10 +227,51 @@ site serves the seed content and the dashboard reports itself unconfigured.
 
 <!-- Newest entry first. One entry per session that changed non-trivial state or made a decision worth remembering. Keep entries short: a few lines, not a restatement of every commit. -->
 
+### 2026-10-25, re-skinned as a Parma Rotta pitch
+
+Rebranded from the invented Luna Piena to **Parma Rotta**, a real restaurant in
+Parma, as a mock-up to pitch them. Read the six rules at the top of this file
+before touching the content; they exist because this version makes factual
+claims about a business that can read them.
+
+**What the research turned up.** Their site returns `403 Bot blocked` to
+everything automated, so nothing was taken from it and no attempt was made to
+get around it. Everything came from public secondary sources: the address and
+telephone from parmawelcome.it, the hours from parma.info and the Michelin
+listing, and the family and the kitchen from a lamadia.com piece. That gave
+enough to write original copy: the name comes from where the Parma torrent used
+to break its banks, Antonio Di Vita has been chef patron for forty years, the
+grill burns chestnut, hornbeam and beech, Lorella runs the room, Jessica the
+pastry, Lara the office, Alfonso is maître and sommelier, the cellar holds over
+a thousand labels under barrel vaults.
+
+**Two claims were deliberately not made**, and both would have been easy to get
+wrong. They hold a Michelin *Plate*, not a star, and the previous version's hero
+said "Una stella Michelin"; that is now "Parma · Carne alla brace" and the
+recognition line says "Piatto Michelin". Sources disagree about the founding
+year, so no year is printed anywhere.
+
+**The chef quote stopped being a quote.** The design renders `chef.quote` inside
+typographic quotation marks with a real person's name under it. Inventing a
+sentence for Antonio Di Vita and publishing it as his would be fabrication, so
+the marks came out of both components and the line is now plainly the house
+voice. If he gives you a real sentence, put the marks back.
+
+**The photography was replaced, not just renamed.** The old set was fine-dining
+plating, which is the wrong register for a wood grill in a farmhouse. Eleven new
+licence-free images: an open fire, meat over flames, barrel-vaulted rooms, hand
+rolled tortelli, a cured meat board, the cellar, chocolate. Their own
+photographs would be better than all of it and are worth asking for.
+
+**Still open:** the booking button points at `app.ovioplus.ai/book/parma-rotta`,
+which 403s like every other slug because the platform sits behind an access
+gate. That is the one thing in the demo that does not work, and it is the
+integration the pitch is about.
+
 ### 2026-10-16, the client left, so it became the demo
 
 The Florence client reviewed the site and went with another provider. Kept and
-renamed rather than deleted: this is now **Luna Piena**, OvioPlus's own demo
+renamed rather than deleted: this is now **Parma Rotta**, OvioPlus's own demo
 restaurant and the template to fork for real clients. The brief was initials
 L and P so the brass seal's `LP` monogram survives untouched, which it does.
 
@@ -269,7 +334,7 @@ and `.env.example`. **`src/lib/booking.ts` and the footer credit link stay
 
 Production now:
 
-- `CONTACT_FROM_EMAIL` = `Luna Piena <no-reply@ovioplus.com>`
+- `CONTACT_FROM_EMAIL` = `Parma Rotta <no-reply@ovioplus.com>`
 - `CONTACT_TO_EMAIL` = `ayoub.balti@ovioplus.com`
 - `OWNER_EMAILS` = `ayoub.balti@ovioplus.com,ayoub.balti@pixartprinting.com`
 
@@ -288,7 +353,7 @@ now reads the menu and the hours from Postgres.
 
 While setting the Resend variables, found a bug I had written in phase 1:
 `CONTACT_FROM_EMAIL` was validated with `z.string().email()`, which **rejects**
-`Luna Piena <no-reply@ovioplus.ai>`. That is the form Resend wants and the form
+`Parma Rotta <no-reply@ovioplus.ai>`. That is the form Resend wants and the form
 `.env.example` tells you to use. It went unnoticed because zod does not validate
 `.default()` values, so the fallback worked and the failure only appeared the
 moment somebody set the variable explicitly, which the deploy instructions say
@@ -464,7 +529,7 @@ with the menu, hours and gallery seeded in `src/content`.
   the seal face delivered the monogram rotated a quarter turn. The face is now
   its own `circleGeometry`, which maps the unit square straight onto it.
 
-**Database.** Neon project **`luna-piena`** (`muddy-cell-76186430`),
+**Database.** Neon project **`parma-rotta`** (`muddy-cell-76186430`),
 aws-eu-central-1, Postgres 18, in the `ovioplus` Neon org
 (`org-twilight-frost-09251036`) but a completely separate project from
 `ovioplus` (`late-lake-47546531`). Database name is Neon's default `neondb`;
@@ -477,12 +542,13 @@ Local development points at a Docker container instead, deliberately: keeping
 `DIRECT_URL` in `.env.local` aimed at Neon would put `pnpm db:seed --force` one
 typo away from wiping the client's content.
 
-**Deployment.** Vercel project `luna-piena` under the `ovio-plus` team, beside
+**Deployment.** Vercel project `parma-rotta` under the `ovio-plus` team, beside
 `ovioplus-platform` and `website`, connected to this GitHub repo so pushes to
-`main` deploy. Live at **https://lunapiena-demo.vercel.app**. Both `lunapiena.vercel.app` and
-`luna-piena.vercel.app` are taken by accounts outside this one, hence the
-`-demo` suffix, which is honest about what the site is anyway. The domain is
-bound to the Vercel project, so it follows future production deploys.
+`main` deploy. Live at **https://parmarotta-demo.vercel.app**. The `-demo` suffix is
+deliberate and worth keeping on every re-skin: it is honest about what the site
+is, and on a version carrying a real restaurant's name it is the one thing in
+the URL that says this is not them. The domain is bound to the Vercel project,
+so it follows future production deploys.
 
 **Still open:**
 

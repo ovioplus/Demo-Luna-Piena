@@ -61,7 +61,14 @@ export async function generateMetadata({
       title: t('title'),
       description: t('description'),
     },
-    robots: { index: true, follow: true },
+    /**
+     * Noindex, deliberately, and it must stay that way while this carries a
+     * real restaurant's name, address and telephone number. Indexed, a pitch
+     * mock-up on a vercel.app domain can surface in a search for the real
+     * restaurant and be mistaken for it. Turn this on only for a site the
+     * restaurant actually owns.
+     */
+    robots: { index: false, follow: false },
   }
 }
 

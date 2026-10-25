@@ -2,74 +2,86 @@ import type { Restaurant } from './types'
 
 /**
  * ============================================================================
- * PLACEHOLDER CONTENT. Replace before the client sees this in production.
+ * DEMO CONTENT FOR A REAL RESTAURANT. Read before changing anything.
  * ============================================================================
- * Everything in this file is invented to make the demo read as a real
- * restaurant. Swap these values and the whole site updates:
+ * Parma Rotta is a real restaurant in Parma. This is a pitch mock-up built for
+ * them, not their site and not affiliated with them.
  *
- *   - chef.name, chef.role, chef.bio, chef.quote
- *   - address (street, postalCode, city, lat, lng)
- *   - phone, email, social handles
- *   - michelinStars
+ * The facts below (address, phone, email, the chef and his family's roles, the
+ * origin of the name, the woods used on the grill) come from public sources:
+ * parmawelcome.it, parma.info, lamadia.com and the Michelin guide listing.
+ * Their own site blocks automated access, so nothing here was taken from it.
  *
- * The photography lives in src/content/images.ts, not here.
+ * Two things deliberately NOT claimed, because they would be false:
+ *
+ *   - **No Michelin star.** Parma Rotta holds a Michelin *Plate*, which is a
+ *     guide listing, not a star. `michelinStars` is 0 and the copy says
+ *     "Piatto Michelin".
+ *   - **No founding year.** Sources disagree (1968 in one listing, 1984 on
+ *     their own site for the wood-fired cooking). The copy refers to the chef's
+ *     forty years instead, which is consistently reported.
+ *
+ * `chef.quote` is the house voice, not words attributed to Antonio Di Vita.
+ * Do not put invented words in a real person's mouth. Replace it with
+ * something he actually said before this is shown as finished work.
  * ============================================================================
  */
 export const restaurant: Restaurant = {
-  name: 'Luna Piena',
-  legalName: 'Luna Piena S.r.l.',
+  name: 'Parma Rotta',
+  legalName: 'Ristorante Parma Rotta',
 
   tagline: {
-    it: 'Cucina italiana contemporanea',
-    en: 'Contemporary Italian cooking',
+    it: 'Carne alla brace e tradizione emiliana',
+    en: 'Wood-fired meat and Emilian tradition',
   },
 
   statement: {
-    it: 'Si cucina due volte al giorno, per pochi coperti, con quello che il mercato ha deciso quella mattina. Non serve altro.',
-    en: 'We cook twice a day, for a handful of covers, with whatever the market decided that morning. Nothing else is required.',
+    it: 'Il nome viene dal punto in cui il torrente Parma rompeva gli argini e allagava la campagna. Quello che da allora non è cambiato è il fuoco: castagno, carpino e faggio, e sopra la carne.',
+    en: 'The name comes from the point where the Parma torrent used to break its banks and flood the fields. What has not changed since is the fire: chestnut, hornbeam and beech, and the meat above it.',
   },
 
   chef: {
-    name: 'Matteo Ferrante', // PLACEHOLDER
+    name: 'Antonio Di Vita',
     role: {
-      it: 'Chef e proprietario',
-      en: 'Chef and owner',
+      it: 'Chef patron',
+      en: 'Chef patron',
     },
     bio: [
       {
-        it: 'Matteo Ferrante è cresciuto nella trattoria di famiglia, dove a undici anni gli fu affidato il compito meno glorioso e più istruttivo della cucina: pulire il pesce. Dice ancora che tutto quello che sa lo ha imparato in quei pomeriggi.',
-        en: 'Matteo Ferrante grew up in his family trattoria, where at eleven he was handed the least glamorous and most instructive job in the kitchen: cleaning the fish. He still says everything he knows came from those afternoons.',
+        it: 'Antonio Di Vita sta alla brace di Parma Rotta da quarant’anni. La cucina è di famiglia nel senso letterale: Lorella in sala, Jessica alla pasticceria, Lara in amministrazione, Alfonso maître e sommelier.',
+        en: 'Antonio Di Vita has worked the fire at Parma Rotta for forty years. The kitchen is a family one in the literal sense: Lorella runs the dining room, Jessica the pastry, Lara the office, Alfonso is maître and sommelier.',
       },
       {
-        it: 'Dopo dodici anni tra Parigi, Copenaghen e San Sebastián è tornato in Italia con una sola idea fissa: una sala piccola, un menu corto, nessun compromesso sulla materia prima. Luna Piena ha aperto nel 2019 con ventidue coperti e li ha ancora tutti.',
-        en: 'After twelve years between Paris, Copenhagen and San Sebastián he came back to Italy with one fixed idea: a small room, a short menu, no compromise on the raw material. Luna Piena opened in 2019 with twenty-two covers and still has exactly that many.',
+        it: 'La sala è un’antica casa colonica e lo si vede: travi a vista, volte a botte, muri spessi e un camino aperto che è il centro di tutto. Cento coperti fra le sale, il giardino e la terrazza.',
+        en: 'The dining room is an old farmhouse and it shows: exposed beams, barrel vaults, thick walls, and an open fireplace that everything else arranges itself around. A hundred covers across the rooms, the garden and the terrace.',
       },
       {
-        it: 'La stella è arrivata nel 2022. In cucina non è cambiato niente, se non il numero di persone che chiamano.',
-        en: 'The star arrived in 2022. Nothing changed in the kitchen except the number of people calling.',
+        it: 'Sotto, la cantina ipogea tiene oltre mille etichette. Sopra, la vetrina della pasticceria, dove Jessica lavora soprattutto il cioccolato.',
+        en: 'Below, the underground cellar holds over a thousand labels. Above it, the pastry window, where Jessica works mostly in chocolate.',
       },
     ],
     quote: {
-      it: 'Non cucino per stupire. Cucino perché qualcuno si ricordi di una sera.',
-      en: 'I do not cook to astonish. I cook so that someone remembers an evening.',
+      it: 'Quarant’anni sulla stessa brace, con la stessa famiglia in sala.',
+      en: 'Forty years over the same fire, with the same family in the dining room.',
     },
     portrait: '/images/chef.jpg',
   },
 
   address: {
-    street: 'Via delle Caldaie 18', // PLACEHOLDER
-    postalCode: '50125',
-    city: 'Firenze',
+    street: 'Strada Langhirano 158',
+    postalCode: '43124',
+    city: 'Parma',
     country: 'IT',
-    lat: 43.7663,
-    lng: 11.2478,
+    lat: 44.7733,
+    lng: 10.3261,
   },
 
-  phone: '+39 055 018 4420', // PLACEHOLDER
-  email: 'info@lunapiena.it', // PLACEHOLDER
-  michelinStars: 1,
+  phone: '+39 0521 966738',
+  email: 'prenotazioni@parmarotta.com',
+  /** Michelin Plate, not a star. See the note at the top of this file. */
+  michelinStars: 0,
 
   social: {
-    instagram: 'lunapiena.firenze', // PLACEHOLDER
+    instagram: 'parma_rotta',
   },
 }

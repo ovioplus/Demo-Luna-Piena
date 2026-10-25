@@ -18,24 +18,24 @@
     "switchTo": "Switch to Italian"
   },
   "home": {
-    "heroEyebrow": "Florence · One Michelin star",
+    "heroEyebrow": "Parma · Cooked over wood",
     "heroScroll": "Continue",
-    "statementLabel": "The principle",
+    "statementLabel": "The name",
     "dishesLabel": "From the kitchen",
     "chefLabel": "Who cooks",
     "chefCta": "Read the story",
     "menuLabel": "The menu",
-    "menuIntro": "Three dishes we are not taking off at the moment. Everything else moves.",
+    "menuIntro": "Three dishes we never take off. The rest moves with the season.",
     "menuCta": "See the full menu",
     "hoursLabel": "When",
     "whereLabel": "Where",
     "reserveTitle": "The table is waiting",
-    "reserveBody": "Twenty-two covers, two services, no telephone waiting list. Booking online takes under a minute.",
+    "reserveBody": "A hundred covers across the rooms, the garden and the terrace. Booking takes under a minute.",
     "reserveCta": "Book a table"
   },
   "menu": {
     "title": "Menu",
-    "intro": "Written in the morning, after the market. What you read here is what there is tonight.",
+    "intro": "The pasta is rolled every morning. What comes off the fire changes with what comes in.",
     "tastingLabel": "Tasting menus",
     "carteLabel": "A la carte",
     "courses": "{count} courses",
@@ -46,7 +46,7 @@
     "allergensLabel": "Allergens",
     "allergensLegend": "Allergens declared under EU Regulation 1169/2011",
     "notesLabel": "Notes",
-    "asideCaption": "Tonight's menu"
+    "asideCaption": "From the grill"
   },
   "allergens": {
     "gluten": "Gluten",
@@ -69,18 +69,18 @@
     "eyebrow": "Who cooks",
     "quoteLabel": "In two lines",
     "kitchenLabel": "The kitchen",
-    "kitchenBody": "Twenty-two covers and seven people. No brigade, no theatrical hierarchy: whoever cleans the fish in the morning serves it at night.",
+    "kitchenBody": "A hundred covers across the rooms, the garden and the terrace, in an old farmhouse with exposed beams and an open fire. One family, in the kitchen and in the dining room.",
     "starLabel": "Recognition",
-    "starBody": "One Michelin star since 2022."
+    "starBody": "Michelin Plate in the Michelin Guide, 2024 and 2025."
   },
   "gallery": {
     "title": "Gallery",
-    "intro": "Service, the room, and whatever arrives in the morning."
+    "intro": "The fire, the rooms, the cellar."
   },
   "reservations": {
     "title": "Reservations",
     "eyebrow": "Before you book",
-    "intro": "The table is yours for the evening. We do not turn the same cover twice.",
+    "intro": "Booking is advisable, especially at the weekend. The table stays yours for the evening.",
     "ctaLabel": "Book online",
     "ctaNote": "This takes you to our booking page. Confirmation is immediate.",
     "hoursTitle": "Hours",
@@ -88,10 +88,10 @@
     "closuresTitle": "Special closures",
     "policyTitle": "How it works",
     "policy": {
-      "release": "Bookings open on the first day of each month for the month after, at 10:00.",
-      "table": "Tasting menus are served for the whole table.",
-      "diet": "Allergies and intolerances: tell us when you book, not when you arrive. We can rewrite almost anything, given notice.",
-      "cancel": "Cancellation is free up to 48 hours before. After that we retain 50 € per person.",
+      "release": "Book by telephone or online. Same day too, when there is room.",
+      "table": "Set menus are served for the whole table.",
+      "diet": "Allergies and intolerances: tell us when you book, not when you arrive.",
+      "cancel": "If you cannot make it, a phone call is enough. We would rather know than hold an empty table.",
       "late": "We hold the table for twenty minutes. After that, please call."
     },
     "phoneLabel": "Or call us",
@@ -151,28 +151,28 @@
   },
   "meta": {
     "home": {
-      "title": "Luna Piena · Michelin-starred restaurant in Florence",
-      "description": "Contemporary Italian cooking in Florence. Twenty-two covers, one Michelin star, a menu that follows the market."
+      "title": "Parma Rotta · Wood-fired meat in Parma",
+      "description": "Meat cooked over chestnut, hornbeam and beech, and Emilian tradition, in an old farmhouse outside Parma."
     },
     "menu": {
       "title": "Menu",
-      "description": "The tasting menus and a la carte at Luna Piena, with allergens declared."
+      "description": "Anolini, tortelli, lasagna and the cuts off the wood fire at Parma Rotta, with allergens declared."
     },
     "story": {
       "title": "Story",
-      "description": "Matteo Ferrante and the kitchen at Luna Piena: twenty-two covers, seven people, no theatrical hierarchy."
+      "description": "Antonio Di Vita and his family, forty years over the fire at Parma Rotta."
     },
     "gallery": {
       "title": "Gallery",
-      "description": "Service, the room and the raw material at Luna Piena."
+      "description": "The fire, the rooms and the cellar at Parma Rotta."
     },
     "reservations": {
       "title": "Reservations",
-      "description": "Hours, closures and booking conditions at Luna Piena in Florence."
+      "description": "Hours and booking conditions at Parma Rotta, Strada Langhirano 158, Parma."
     },
     "contact": {
       "title": "Contact",
-      "description": "Address, hours and contact form for Luna Piena in Florence."
+      "description": "Address, hours and contact form for Parma Rotta in Parma."
     }
   },
   "dashboard": {

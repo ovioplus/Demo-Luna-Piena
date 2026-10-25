@@ -140,7 +140,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
           <Reveal variant="fade" delay={120}>
             <blockquote className="t-display-m italic">
-              &ldquo;{localized(restaurant.chef.quote, locale)}&rdquo;
+              {localized(restaurant.chef.quote, locale)}
             </blockquote>
           </Reveal>
 

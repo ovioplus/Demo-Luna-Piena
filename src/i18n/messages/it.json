@@ -18,24 +18,24 @@
     "switchTo": "Passa all'inglese"
   },
   "home": {
-    "heroEyebrow": "Firenze · Una stella Michelin",
+    "heroEyebrow": "Parma · Carne alla brace",
     "heroScroll": "Continua",
-    "statementLabel": "Il principio",
+    "statementLabel": "Il nome",
     "dishesLabel": "Dalla cucina",
     "chefLabel": "Chi cucina",
     "chefCta": "Leggi la storia",
     "menuLabel": "Il menu",
-    "menuIntro": "Tre piatti che al momento non togliamo. Il resto cambia.",
+    "menuIntro": "Tre piatti che non togliamo. Il resto cambia con la stagione.",
     "menuCta": "Vedi il menu completo",
     "hoursLabel": "Quando",
     "whereLabel": "Dove",
     "reserveTitle": "Il tavolo vi aspetta",
-    "reserveBody": "Ventidue coperti, due servizi, nessuna lista d'attesa telefonica. La prenotazione si chiude online in meno di un minuto.",
+    "reserveBody": "Cento coperti fra le sale, il giardino e la terrazza. Si prenota in meno di un minuto.",
     "reserveCta": "Prenota un tavolo"
   },
   "menu": {
     "title": "Menu",
-    "intro": "Scritto la mattina, dopo il mercato. Quello che leggete qui è quello che c'è stasera.",
+    "intro": "La sfoglia si tira ogni mattina. I tagli alla brace cambiano con quello che arriva.",
     "tastingLabel": "Menu degustazione",
     "carteLabel": "Alla carta",
     "courses": "{count} portate",
@@ -46,7 +46,7 @@
     "allergensLabel": "Allergeni",
     "allergensLegend": "Allergeni indicati secondo il Reg. UE 1169/2011",
     "notesLabel": "Note",
-    "asideCaption": "Il menu di questa sera"
+    "asideCaption": "Dalla griglia"
   },
   "allergens": {
     "gluten": "Glutine",
@@ -69,18 +69,18 @@
     "eyebrow": "Chi cucina",
     "quoteLabel": "In due righe",
     "kitchenLabel": "La cucina",
-    "kitchenBody": "Ventidue coperti e sette persone. Nessuna brigata, nessuna gerarchia teatrale: chi pulisce il pesce la mattina lo serve la sera.",
+    "kitchenBody": "Cento coperti fra le sale, il giardino e la terrazza, in un’antica casa colonica con le travi a vista e un camino aperto. In cucina e in sala c’è una famiglia sola.",
     "starLabel": "Riconoscimenti",
-    "starBody": "Una stella Michelin dal 2022."
+    "starBody": "Piatto Michelin nella Guida Michelin, 2024 e 2025."
   },
   "gallery": {
     "title": "Galleria",
-    "intro": "Il servizio, la sala, quello che arriva la mattina."
+    "intro": "La brace, le sale, la cantina."
   },
   "reservations": {
     "title": "Prenota",
     "eyebrow": "Prima di prenotare",
-    "intro": "Il tavolo è vostro per tutta la sera. Non facciamo due turni sullo stesso coperto.",
+    "intro": "Conviene prenotare, soprattutto nel fine settimana. Il tavolo resta vostro per tutta la sera.",
     "ctaLabel": "Prenota online",
     "ctaNote": "Vi porta alla nostra pagina di prenotazione. Conferma immediata.",
     "hoursTitle": "Orari",
@@ -88,10 +88,10 @@
     "closuresTitle": "Chiusure straordinarie",
     "policyTitle": "Come funziona",
     "policy": {
-      "release": "Le prenotazioni aprono il primo giorno di ogni mese per il mese successivo, alle 10:00.",
-      "table": "I menu degustazione sono serviti per l'intero tavolo.",
-      "diet": "Allergie e intolleranze: segnalatele in fase di prenotazione, non all'arrivo. Riscriviamo quasi tutto, se lo sappiamo per tempo.",
-      "cancel": "La cancellazione è gratuita fino a 48 ore prima. Oltre quel termine tratteniamo 50 € a persona.",
+      "release": "Si prenota per telefono o online. Anche in giornata, quando c’è posto.",
+      "table": "I percorsi degustazione sono serviti per l’intero tavolo.",
+      "diet": "Allergie e intolleranze: segnalatele quando prenotate, non all’arrivo.",
+      "cancel": "Se non riuscite a venire, basta una telefonata. Preferiamo saperlo che tenere un tavolo vuoto.",
       "late": "Teniamo il tavolo per venti minuti. Dopo, chiamateci."
     },
     "phoneLabel": "Oppure telefonate",
@@ -151,28 +151,28 @@
   },
   "meta": {
     "home": {
-      "title": "Luna Piena · Ristorante stellato a Firenze",
-      "description": "Cucina italiana contemporanea a Firenze. Ventidue coperti, una stella Michelin, un menu che cambia con il mercato."
+      "title": "Parma Rotta · Carne alla brace a Parma",
+      "description": "Carne cotta sulla brace di castagno, carpino e faggio, e la tradizione emiliana, in un’antica casa colonica a Parma."
     },
     "menu": {
       "title": "Menu",
-      "description": "I menu degustazione e la carta di Luna Piena, con l'indicazione degli allergeni."
+      "description": "Anolini, tortelli, lasagna e i tagli alla brace di Parma Rotta, con l’indicazione degli allergeni."
     },
     "story": {
       "title": "La storia",
-      "description": "Matteo Ferrante e la cucina di Luna Piena: ventidue coperti, sette persone, nessuna gerarchia teatrale."
+      "description": "Antonio Di Vita e la sua famiglia, da quarant’anni alla brace di Parma Rotta."
     },
     "gallery": {
       "title": "Galleria",
-      "description": "Il servizio, la sala e la materia prima di Luna Piena."
+      "description": "La brace, le sale e la cantina di Parma Rotta."
     },
     "reservations": {
       "title": "Prenota",
-      "description": "Orari, chiusure e condizioni di prenotazione di Luna Piena a Firenze."
+      "description": "Orari e condizioni di prenotazione di Parma Rotta, Strada Langhirano 158, Parma."
     },
     "contact": {
       "title": "Contatti",
-      "description": "Indirizzo, orari e modulo di contatto di Luna Piena a Firenze."
+      "description": "Indirizzo, orari e modulo di contatto di Parma Rotta a Parma."
     }
   },
   "dashboard": {

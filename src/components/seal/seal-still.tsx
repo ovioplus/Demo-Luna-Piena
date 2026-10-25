@@ -50,7 +50,7 @@ export function SealStill({ className }: { className?: string }) {
         fill="url(#seal-mark)"
         style={{ fontFamily: 'var(--font-bodoni), Didot, Georgia, serif', fontSize: 150, fontWeight: 400 }}
       >
-        LP
+        PR
       </text>
 
       <text
@@ -66,7 +66,7 @@ export function SealStill({ className }: { className?: string }) {
           letterSpacing: '10px',
         }}
       >
-        FIRENZE
+        PARMA
       </text>
     </svg>
   )

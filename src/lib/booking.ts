@@ -9,6 +9,6 @@
  * thing that changes. Nothing else in the codebase knows OvioPlus exists.
  * ============================================================================
  */
-const BOOKING_SLUG = 'luna-piena'
+const BOOKING_SLUG = 'parma-rotta'
 
 export const BOOKING_URL = `https://app.ovioplus.ai/book/${BOOKING_SLUG}`

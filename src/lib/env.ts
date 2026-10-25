@@ -43,7 +43,7 @@ const serverSchema = z.object({
    * OvioPlus and the visitor's address goes in reply-to. Swap this one variable
    * once the restaurant's own domain is verified in Resend.
    */
-  CONTACT_FROM_EMAIL: address('CONTACT_FROM_EMAIL').default('Luna Piena <no-reply@ovioplus.com>'),
+  CONTACT_FROM_EMAIL: address('CONTACT_FROM_EMAIL').default('Parma Rotta <no-reply@ovioplus.com>'),
   /** Where the restaurant actually reads its mail. */
   CONTACT_TO_EMAIL: address('CONTACT_TO_EMAIL'),
 })
@@ -64,4 +64,4 @@ export function readServerEnv(): { ok: true; env: ServerEnv } | { ok: false; err
   return { ok: true, env: parsed.data }
 }
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lunapiena-demo.vercel.app'
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://parmarotta-demo.vercel.app'
